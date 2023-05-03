@@ -1,0 +1,32 @@
+<app-search></app-search>
+<ul>
+  <li *ngFor="let job of jobs">
+    <a routerLink="/job/{{job.id}}">
+      <img [src]="job.imageUrl" [alt]="job.name">
+      <div class="content">
+        <div class="name">
+          {{job.name}}
+        </div>
+        <span class="favorite {{job.favorite?'':'not'}}">
+          ❤
+        </span>
+
+        <!-- stars -->
+        <div class="stars">
+          <star-rating [value]='job.stars' [totalstars]='5' checkedcolor='red' uncheckedcolor='black' size='22px'
+            [readonly]=true>
+          </star-rating>
+        </div>
+        <div class="job-item-footer">
+          <div class="job-time">
+            <span>🕒</span>
+            {{job.jobTime}} min
+          </div>
+          <div class="proce">
+            <span>{{job.price | currency: 'Lei '}}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

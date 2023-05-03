@@ -1,0 +1,40 @@
+footer {
+  position: relative;
+  background: white;
+  padding: 0;
+  border-top: 1px solid #800020;
+  color: #800020;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.address {
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.program {
+  font-weight: bold;
+  margin-top: 0.9rem;
+}
+
+span {
+  background: #800020;
+  color: white;
+  padding: 0.2rem 0.45rem;
+  border-radius: 100rem;
+  font-size: 0.9rem;
+}
+
+li {
+  margin: 0 0.9rem 0.9rem 0;
+}
