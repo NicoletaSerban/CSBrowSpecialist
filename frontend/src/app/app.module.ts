@@ -8,6 +8,9 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { RatingModule } from 'ng-starrating';
 import { SearchComponent } from './components/partials/search/search.component';
+import { TagsComponent } from './components/partials/tags/tags.component';
+import { JobPageComponent } from './components/pages/job-page/job-page.component';
+import { CartComponent } from './components/pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { SearchComponent } from './components/partials/search/search.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    TagsComponent,
+    JobPageComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

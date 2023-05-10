@@ -1,4 +1,5 @@
 import { Job } from "./app/shared/models/Job";
+import { Tag } from "./app/shared/models/Tags";
 
 export const sample_jobs: Job[] = [
   {
@@ -7,9 +8,9 @@ export const sample_jobs: Job[] = [
   jobTime: '40-50',
   price: 35,
   stars: 4.5,
-    imageUrl: 'assets/epilare-faciala.jpg',
-    favorite: false,
-
+  imageUrl: 'assets/epilare-faciala.jpg',
+  favorite: false,
+  tags:['Epilare'],
 },
 {
   id:'2',
@@ -19,7 +20,7 @@ export const sample_jobs: Job[] = [
   stars: 4,
   imageUrl: 'assets/epilare-mustata.jpg',
   favorite: true,
-
+  tags:['Epilare'],
 },
 {
   id:'3',
@@ -29,7 +30,7 @@ export const sample_jobs: Job[] = [
   stars: 5,
   imageUrl: 'assets/laminare.jpg',
   favorite: false,
-
+  tags:['Laminare', 'Sprancene'],
 },
 {
   id:'4',
@@ -39,7 +40,7 @@ export const sample_jobs: Job[] = [
   stars: 3.5,
   imageUrl: 'assets/laminare-vopsire.jpg',
   favorite: true,
-
+  tags:['Vopsire', 'Laminare'],
 },
 {
   id:'5',
@@ -49,7 +50,7 @@ export const sample_jobs: Job[] = [
   stars: 3.4,
   imageUrl: 'assets/stilizare.jpg',
   favorite: false,
-
+  tags:['Stilizare', 'Sprancene'],
 },
 {
   id:'6',
@@ -59,6 +60,7 @@ export const sample_jobs: Job[] = [
   stars: 2.5,
   imageUrl: 'assets/stilizat-vopsire.jpg',
   favorite: true,
+  tags:['Vopsire', 'Stilizare'],
 
   },
   {
@@ -69,6 +71,14 @@ export const sample_jobs: Job[] = [
     stars: 2,
     imageUrl: 'assets/vopsit-gene.jpg',
     favorite: false,
-
+    tags:['Vopsire', 'Gene'],
   },
+]
+
+export const sample_tags: Tag[] = [
+  { name: 'All', count: 7 },
+  { name: 'Sprancene', count: 2 },
+  { name: 'Vopsire', count: 3 },
+  { name: 'Epilare', count: 2 },
+  { name: 'Gene', count: 1 },
 ]

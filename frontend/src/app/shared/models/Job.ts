@@ -6,4 +6,5 @@ export class Job{
   imageUrl!: string;
   jobTime!: string;
   favorite?: boolean;
+  tags?: string[];
 }

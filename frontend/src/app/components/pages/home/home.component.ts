@@ -14,9 +14,11 @@ export class HomeComponent implements OnInit {
   constructor(private jobService:JobService, activatedRoute:ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
       if (params.searchTerm)
-      this.jobs = this.jobService.getAllJobsBySearchTerm(params.searchTerm);
+        this.jobs = this.jobService.getAllJobsBySearchTerm(params.searchTerm);
+      else if (params.tag)
+        this.jobs = this.jobService.getAllJobsByTag(params.tag)
       else
-      this.jobs = jobService.getAllJobs()
+        this.jobs = jobService.getAllJobs()
   })
   }
 
