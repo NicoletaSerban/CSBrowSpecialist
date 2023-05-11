@@ -1,42 +1,43 @@
-<!-- <div class="container">
-  <app-not-found [visible]="!food" notFoundMessage="Food Not Found" resetLinkText="Back To Homepage"></app-not-found> -->
+<div class="container">
+  <app-not-found [visible]="!job.id" notFoundMessage="Service Not Found"
+    resetLinkText="Back To Homepage"></app-not-found>
 
-<div *ngIf="job" class="container">
-  <img [src]="job.imageUrl" [alt]="job.name" />
+  <div *ngIf="job.id" class="container">
+    <img [src]="job.imageUrl" [alt]="job.name" />
 
-  <div class="details">
-    <div class="header">
-      <span class="name">
-        {{job.name}}
-      </span>
-      <span class="favorite {{job.favorite?'':'not'}}">
-        ❤
-      </span>
+    <div class="details">
+      <div class="header">
+        <span class="name">
+          {{job.name}}
+        </span>
+        <span class="favorite {{job.favorite?'':'not'}}">
+          ❤
+        </span>
+      </div>
+
+      <div class="rating">
+        <star-rating [value]='job.stars' [totalstars]='5' checkedcolor='red' unchechedcolor='black' size='25px'
+          [readonly]=true>
+        </star-rating>
+      </div>
+
+      <div class="tags">
+        <a *ngFor="let tag of job.tags" routerLink="/tag/{{tag}}">
+          {{tag}}
+        </a>
+      </div>
+
+      <div class="jobTime">
+        <span>
+          Timpul de executie va fi intre <strong>{{job.jobTime}}</strong> minute
+        </span>
+      </div>
+
+      <div class="price">
+        <span>
+          {{job.price | currency:'Lei'}}
+        </span>
+      </div>
+      <button (click)="addToCart()">Add To Cart</button>
     </div>
-
-    <div class="rating">
-      <star-rating [value]='job.stars' [totalstars]='5' checkedcolor='red' unchechedcolor='black' size='25px'
-        [readonly]=true>
-      </star-rating>
-    </div>
-
-    <div class="tags">
-      <a *ngFor="let tag of job.tags" routerLink="/tag/{{tag}}">
-        {{tag}}
-      </a>
-    </div>
-
-    <div class="jobTime">
-      <span>
-        Timpul de executie va fi intre <strong>{{job.jobTime}}</strong> minute
-      </span>
-    </div>
-
-    <div class="price">
-      <span>
-        {{job.price | currency:'Lei'}}
-      </span>
-    </div>
-    <button (click)="addToCart()">Add To Cart</button>
   </div>
-</div>

@@ -11,6 +11,8 @@ import { SearchComponent } from './components/partials/search/search.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
 import { JobPageComponent } from './components/pages/job-page/job-page.component';
 import { CartComponent } from './components/pages/cart/cart.component';
+import { TitleComponent } from './components/partials/title/title.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CartComponent } from './components/pages/cart/cart.component';
     SearchComponent,
     TagsComponent,
     JobPageComponent,
-    CartComponent
+    CartComponent,
+    TitleComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

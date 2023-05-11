@@ -1,5 +1,7 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found [visible]="!jobs || !jobs.length" resetLinkText="Reset Search!">
+</app-not-found>
 <ul>
   <li *ngFor="let job of jobs">
     <a routerLink="/job/{{job.id}}">
