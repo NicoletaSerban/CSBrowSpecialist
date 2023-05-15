@@ -10,7 +10,9 @@ import { Tag } from 'src/app/shared/models/Tags';
 export class TagsComponent implements OnInit{
   tags?: Tag[];
   constructor(jobService: JobService) {
-    this.tags = jobService.getAllTags()
+    jobService.getAllTags().subscribe(serverTags => {
+      this.tags = serverTags;
+    })
   }
   ngOnInit(): void {}
 

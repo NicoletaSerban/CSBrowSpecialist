@@ -1,8 +1,7 @@
 <div class="container">
-  <app-not-found [visible]="!job.id" notFoundMessage="Service Not Found"
-    resetLinkText="Back To Homepage"></app-not-found>
+  <app-not-found [visible]="!job" notFoundMessage="Service Not Found" resetLinkText="Back To Homepage"></app-not-found>
 
-  <div *ngIf="job.id" class="container">
+  <div *ngIf="job" class="container">
     <img [src]="job.imageUrl" [alt]="job.name" />
 
     <div class="details">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { JobService } from 'src/app/services/job.service';
 import { Job } from 'src/app/shared/models/Job';
 
@@ -11,14 +12,19 @@ import { Job } from 'src/app/shared/models/Job';
 export class HomeComponent implements OnInit {
 
   jobs:Job[] = [];
-  constructor(private jobService:JobService, activatedRoute:ActivatedRoute) {
+  constructor(private jobService: JobService, activatedRoute: ActivatedRoute) {
+    let jobsObservable: Observable<Job[]>
     activatedRoute.params.subscribe((params) => {
       if (params.searchTerm)
-        this.jobs = this.jobService.getAllJobsBySearchTerm(params.searchTerm);
+      jobsObservable = this.jobService.getAllJobsBySearchTerm(params.searchTerm);
       else if (params.tag)
-        this.jobs = this.jobService.getAllJobsByTag(params.tag)
+      jobsObservable = this.jobService.getAllJobsByTag(params.tag)
       else
-        this.jobs = jobService.getAllJobs()
+        jobsObservable = jobService.getAllJobs()
+
+      jobsObservable.subscribe((serverJobs) => {
+          this.jobs = serverJobs
+        })
   })
   }
 

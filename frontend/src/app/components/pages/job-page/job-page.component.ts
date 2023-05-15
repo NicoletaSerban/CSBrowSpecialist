@@ -15,7 +15,9 @@ export class JobPageComponent implements OnInit{
     activatedRoute.params.subscribe((params) => {
 
       if (params.id)
-        this.job = jobService.getJobById(params.id)
+        jobService.getJobById(params.id).subscribe(serverJob => {
+          this.job = serverJob;
+         })
 
     })
   }
