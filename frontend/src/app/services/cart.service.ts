@@ -26,7 +26,7 @@ this.cart.items.push(new CartItem(job))
 this.setCartToLocalStorage()
   }
 
-  removeItemFromCart(jobId: string): void{
+  removeFromCart(jobId: string): void{
     this.cart.items = this.cart.items.filter(item => item.job.id != jobId);
      // for local storage
      this.setCartToLocalStorage();
@@ -54,6 +54,10 @@ this.setCartToLocalStorage()
   // so all the changes of the cart to be made only from the cart service
   getCartObservable(): Observable<Cart>{
     return this.cartSubject.asObservable()
+  }
+
+  getCart(): Cart{
+    return this.cartSubject.value;
   }
 
   // to store in localStorage when we don't use backend

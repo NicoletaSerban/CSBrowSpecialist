@@ -13,14 +13,15 @@ export class CartComponent implements OnInit{
 
   constructor(private cartService: CartService) {
     this.cartService.getCartObservable().subscribe((cart) => {
-      this.cart = cart
+      this.cart = cart;
+      console.log(cart)
     })
    }
 
   ngOnInit(): void {}
 
-  removeFromCart(cartItem: CartItem) {
-    this.cartService.removeItemFromCart(cartItem.job.id)
+  removeFromCart(cartItem:CartItem){
+    this.cartService.removeFromCart(cartItem.job.id);
   }
   changeQuantity(cartItem: CartItem, quantityInString: string) {
     const quantity = parseInt(quantityInString);
