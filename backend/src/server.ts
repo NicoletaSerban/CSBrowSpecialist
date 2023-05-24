@@ -5,9 +5,9 @@ import express from "express";
 import cors from "cors";
 import jobsRouter from './routers/job.router';
 import userRouter from './routers/user.router'
-import { dcConnect } from './configs/database.config';
+import { dbConnect } from './configs/database.config';
 
-dcConnect();
+dbConnect();
 const app = express();
 app.use(express.json())
 

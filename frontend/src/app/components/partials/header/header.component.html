@@ -3,7 +3,7 @@
     <a routerLink="/" class="logo">CS Brow Specialist!</a>
     <nav>
       <ul>
-        <li *ngIf="!user.token">
+        <li *ngIf="!isAuth">
           <a routerLink="/login">Login</a>
         </li>
         <li *ngIf="isAuth" class="menu-container">

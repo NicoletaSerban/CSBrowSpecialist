@@ -22,20 +22,22 @@ export class LoginPageComponent implements OnInit{
     });
 
     // to return where we were; snapshot = the latest value
-    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
   }
-  get fc() {
+  get fc(){
     return this.loginForm.controls;
   }
+
   submit() {
     this.isSubmitted = true;
     if (this.loginForm.invalid) return;
 
-    this.userService.login({
-      email: this.fc.email.value,
-      password: this.fc.password.value
-    }).subscribe(() => {
-      this.router.navigateByUrl(this.returnUrl)
+    const email = this.fc.email.value;
+    const password = this.fc.password.value;
+
+    this.userService.login({ email, password }).subscribe(() => {
+      this.router.navigateByUrl(this.returnUrl);
     });
   }
+
 }

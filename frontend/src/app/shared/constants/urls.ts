@@ -8,4 +8,6 @@ export const JOBS_BY_TAG_URL = JOBS_URL + '/tag/';
 export const JOBS_BY_ID_URL = JOBS_URL + '/';
 
 
+
 export const USER_LOGIN_URL = BASE_URL + '/api/users/login';
+export const USER_REGISTER_URL =  BASE_URL + '/api/users/register'

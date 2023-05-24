@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit{
     })
 
     userService.userObservable.subscribe((newUser) => {
+
       this.user = newUser
     })
   }
@@ -29,7 +30,7 @@ export class HeaderComponent implements OnInit{
   }
 
   get isAuth() {
-    return this.user.token
+    return this.user.token;
   }
 
 }
