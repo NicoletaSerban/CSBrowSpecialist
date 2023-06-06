@@ -17,10 +17,10 @@ export class HeaderComponent implements OnInit{
     })
 
     userService.userObservable.subscribe((newUser) => {
-
-      this.user = newUser
+      this.user = newUser;
+      console.log(`Login ${this.user.name}`)
     })
-  }
+   }
   ngOnInit(): void {
 
   }
@@ -29,8 +29,8 @@ export class HeaderComponent implements OnInit{
     this.userService.logout()
   }
 
-  get isAuth() {
-    return this.user.token;
+  get isAuth(){
+    return this.user.token
   }
 
 }

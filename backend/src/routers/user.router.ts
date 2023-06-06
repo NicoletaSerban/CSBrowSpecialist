@@ -28,10 +28,10 @@ router.post('/login', asyncHandler(
 
         const { email, password } = req.body;
        console.log(req.body)
-    const user = await UserModel.findOne({email,password})
+    const user = await UserModel.findOne({email})
     
-    if (user) {
-        res.send(generateTokenResponse(user))
+    if(user && (await bcrypt.compare(password,user.password))) {
+        res.send(generateTokenResponse(user));
     } else {
         res.status(HTTP_BAD_REQUEST).send('Username or password is not valid!')
     }
@@ -40,15 +40,16 @@ router.post('/login', asyncHandler(
 
 router.post('/register', asyncHandler(
     async (req, res) => {
-        const { name, email, password, address } = req.body
+        const { name, email, password, address } = req.body;
         const user = await UserModel.findOne({ email })
         if (user) {
             res.status(HTTP_BAD_REQUEST).send('User already exist, please login!')
-            return
+            return;
         }
 
         const encryptedPassword = await bcrypt.hash(password, 10);
 
+        // creating a new user
         const newUser: User = {
             id: '',
             name,
@@ -56,7 +57,6 @@ router.post('/register', asyncHandler(
             password: encryptedPassword,
             address,
             isAdmin: false
-
         }
         const dbUser = await UserModel.create(newUser);
         res.send(generateTokenResponse(dbUser))

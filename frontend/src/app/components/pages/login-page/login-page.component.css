@@ -14,7 +14,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
 }
 .error-list {
   color: brown;
