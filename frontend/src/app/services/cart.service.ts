@@ -56,6 +56,7 @@ this.setCartToLocalStorage()
     return this.cartSubject.asObservable()
   }
 
+  // to take the latest value
   getCart(): Cart{
     return this.cartSubject.value;
   }

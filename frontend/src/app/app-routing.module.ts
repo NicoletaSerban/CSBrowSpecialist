@@ -5,6 +5,7 @@ import { JobPageComponent } from './components/pages/job-page/job-page.component
 import { CartComponent } from './components/pages/cart/cart.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 
 const routes: Routes = [
   { path:'', component: HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'job/:id', component: JobPageComponent },
   { path: 'cart', component: CartComponent },
   { path: 'login', component: LoginPageComponent },
- { path: 'register', component: RegisterPageComponent },
+  { path: 'register', component: RegisterPageComponent },
+  { path: 'checkout', component: CheckoutComponent },
 ];
 
 @NgModule({

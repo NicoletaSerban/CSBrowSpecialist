@@ -21,6 +21,11 @@ export class UserService {
     this.userObservable = this.userSubject.asObservable();
   }
 
+  // to take the latest value of the user
+  public get currentUser(): User{
+    return this.userSubject.value
+  }
+
   login(userLogin:IUserLogin):Observable<User>{
     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
       tap({
