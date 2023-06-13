@@ -6,6 +6,7 @@ import { CartComponent } from './components/pages/cart/cart.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
   { path:'', component: HomeComponent},
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout', component: CheckoutComponent, canActivate:[AuthGuard] },
 ];
 
 @NgModule({
